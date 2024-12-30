@@ -51,7 +51,9 @@ export default function Menuu({ user }) {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={() => navigate("account")}>Profile</MenuItem>
+        <MenuItem onClick={() => navigate("/shop/account/profile")}>
+          Profile
+        </MenuItem>
         <MenuItem onClick={() => navigate("/shop/account/order")}>
           My Orders
         </MenuItem>

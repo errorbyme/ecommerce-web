@@ -26,7 +26,7 @@ import Cart from "./Pages/ShoppingPage/Cart/Cart.jsx";
 import ShoppingPageLayout from "./Pages/ShoppingPage/ShoppingPageLayout/ShoppingPageLayout.jsx";
 import Orders from "./Pages/ShoppingPage/Orders/Orders.jsx";
 import OrderDetails from "./Pages/ShoppingPage/Orders/OrderDetails.jsx";
-import Profile from "./Pages/ShoppingPage/Account/profile.jsx";
+import Profile from "./Pages/ShoppingPage/Account/Profile.jsx";
 import Return from "./Pages/ShoppingPage/PaymentPages/Return.jsx";
 import SearchProducts from "./Pages/ShoppingPage/SearchPage/SearchProducts.jsx";
 
@@ -124,7 +124,7 @@ const router = createBrowserRouter([
             element: <ProductDetails />,
           },
           {
-            path: "account",
+            path: "account/profile",
             element: <Profile />,
           },
           {
