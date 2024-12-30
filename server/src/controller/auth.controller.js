@@ -50,7 +50,7 @@ const loginUser = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
+      sameSite: "None",
       path: "/",
       maxAge: 60 * 60 * 1000,
     });
@@ -77,7 +77,7 @@ const logoutUser = async (req, res) => {
       httpOnly: false,
       maxAge: 0,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
+      sameSite: "None",
     });
 
     return res.json({
