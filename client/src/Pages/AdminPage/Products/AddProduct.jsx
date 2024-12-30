@@ -3,7 +3,7 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import ImageUpload from "./ImageUpload";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addNewProduct,
   editProduct,
@@ -11,6 +11,7 @@ import {
 } from "../../../Store/admin/product-slice";
 import { toast } from "react-toastify";
 import { serverAPI } from "../../../Store/api/api";
+import { CircularProgress } from "@mui/material";
 
 export default function AddProduct({
   open,
@@ -25,6 +26,7 @@ export default function AddProduct({
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImgUrl, setUploadedImgUrl] = useState("");
   const [imageLoadingState, setImageLoadingState] = useState(true);
+  const { isLoading } = useSelector((state) => state.adminProducts);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -216,9 +218,15 @@ export default function AddProduct({
               variant="contained"
               color="secondary"
               fullWidth
-              disabled={isDisabled}
+              disabled={isDisabled || isLoading}
             >
-              {isEditMode ? "Update" : "Add"}
+              {isLoading ? (
+                <CircularProgress size={25} />
+              ) : isEditMode ? (
+                "Update"
+              ) : (
+                "Add"
+              )}
             </Button>
           </form>
         </div>

@@ -34,14 +34,6 @@ export default function Orders() {
     if (orderDetails !== null) setOpen(true);
   }, [orderDetails]);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center p-10  min-h-72">
-        <CircularProgress />
-      </div>
-    );
-  }
-
   if (orderList && orderList.length === 0)
     return <div className="text-lg min-h-56 p-10 font-bold">No Orders</div>;
 
@@ -84,8 +76,13 @@ export default function Orders() {
                     <Button
                       onClick={() => handleFetchOrderDetails(orderItem?._id)}
                       sx={{ p: 0.5, fontSize: 9, fontWeight: "bold" }}
+                      disabled={isLoading}
                     >
-                      view details <ArrowRightAltIcon />
+                      {isLoading ? (
+                        <CircularProgress size={25} />
+                      ) : (
+                        "view details " + <ArrowRightAltIcon />
+                      )}
                     </Button>
                   </TableCell>
                 </TableRow>

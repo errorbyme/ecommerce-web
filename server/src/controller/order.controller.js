@@ -42,11 +42,11 @@ const createOrder = async (req, res) => {
 
     const orderDetails = {
       order_id: orderId, // Unique order ID
-      order_amount: 1, // Amount to be charged
+      order_amount: Number(totalAmount), // Amount to be charged
       order_currency: "INR", // Currency
       order_note: "Test Order from API",
       customer_details: {
-        customer_id: "13146181625262828", // Unique user ID
+        customer_id: userId, // Unique user ID
         customer_email: "user@example.com", // User email
         customer_phone: "1234567890", // User phone
       },

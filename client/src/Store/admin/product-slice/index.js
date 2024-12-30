@@ -63,6 +63,15 @@ const adminProductSlice = createSlice({
       .addCase(getAllProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.productList = [];
+      })
+      .addCase(addNewProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addNewProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
+      .addCase(addNewProduct.rejected, (state, action) => {
+        state.isLoading = false;
       });
   },
 });
