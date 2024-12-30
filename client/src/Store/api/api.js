@@ -1,1 +1,1 @@
-export const serverAPI = "http://localhost:9999";
+export const serverAPI = "https://ecommerce-web-project-faa3.onrender.com";
