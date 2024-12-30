@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import Sort from "./sort";
+import Sort from "./Sort";
 import Filter from "./Filter";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../../Store/product-slice";
