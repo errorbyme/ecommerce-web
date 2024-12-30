@@ -1,0 +1,29 @@
+# Ignore node_modules folder
+server/node_modules/
+client/node_modules/
+
+# Ignore .env files in server and client folders
+server/.env
+client/.env
+
+# Alternatively, ignore all .env files in any subfolder
+# **/.env
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore build files
+build/
+dist/
+
+# Ignore other files
+*.tmp
+*.bak
