@@ -81,7 +81,9 @@ export default function Orders() {
                       {isLoading ? (
                         <CircularProgress size={25} />
                       ) : (
-                        "view details " + <ArrowRightAltIcon />
+                        <span>
+                          view details <ArrowRightAltIcon />
+                        </span>
                       )}
                     </Button>
                   </TableCell>
