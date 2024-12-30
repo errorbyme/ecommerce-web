@@ -84,7 +84,7 @@ const OrderSlice = createSlice({
         state.orderList = [];
       })
       .addCase(getOrderDetails.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = false;
       })
       .addCase(getOrderDetails.fulfilled, (state, action) => {
         state.orderDetails = action.payload?.data;

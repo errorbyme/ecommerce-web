@@ -34,11 +34,18 @@ export default function Orders() {
     if (orderDetails !== null) setOpen(true);
   }, [orderDetails]);
 
+  if (isLoading)
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <CircularProgress size={25} />
+      </div>
+    );
+
   if (orderList && orderList.length === 0)
-    return <div className="text-lg min-h-56 p-10 font-bold">No Orders</div>;
+    return <div className="text-lg min-h-screen p-10 font-bold">No Orders</div>;
 
   return (
-    <div className="p-5">
+    <div className="min-h-screen p-5">
       <TableContainer component={Paper} sx={{ minHeight: 245 }}>
         <h1 className="text-xl font-bold p-2">All Orders</h1>
         <Table sx={{ minWidth: 650 }} size="small">
@@ -78,13 +85,7 @@ export default function Orders() {
                       sx={{ p: 0.5, fontSize: 9, fontWeight: "bold" }}
                       disabled={isLoading}
                     >
-                      {isLoading ? (
-                        <CircularProgress size={25} />
-                      ) : (
-                        <span>
-                          view details <ArrowRightAltIcon />
-                        </span>
-                      )}
+                      view details <ArrowRightAltIcon />
                     </Button>
                   </TableCell>
                 </TableRow>

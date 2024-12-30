@@ -230,7 +230,7 @@ const Cart = ({ isCheckout, address }) => {
 
   if (!cartItems || cartItems?.items?.length === 0)
     return (
-      <div className="relative p-10 font-bold min-h-56">No Cart Items</div>
+      <div className="relative p-10 font-bold min-h-screen">No Cart Items</div>
     );
 
   return (

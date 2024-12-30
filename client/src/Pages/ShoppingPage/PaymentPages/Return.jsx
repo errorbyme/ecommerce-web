@@ -9,7 +9,7 @@ const Return = () => {
   const success = searchParams.get("success") === "true";
   const navigate = useNavigate();
   return (
-    <div className="min-h-56 p-10">
+    <div className="min-h-screen p-10">
       {success ? (
         <div>
           <h1 className="text-xl font-bold">Payment Successfull..</h1>

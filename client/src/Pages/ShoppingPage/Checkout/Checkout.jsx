@@ -10,7 +10,7 @@ function Checkout() {
 
   if (isPaymentLoading)
     return (
-      <div className="min-h-54 p-10">
+      <div className="min-h-screen p-10">
         <h1
           className="sm
         :text-2xl text-xl font-bold"
