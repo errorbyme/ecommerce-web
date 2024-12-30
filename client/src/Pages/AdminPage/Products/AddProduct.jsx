@@ -10,6 +10,7 @@ import {
   getAllProducts,
 } from "../../../Store/admin/product-slice";
 import { toast } from "react-toastify";
+import { serverAPI } from "../../../Store/api/api";
 
 export default function AddProduct({
   open,
@@ -66,11 +67,13 @@ export default function AddProduct({
     data.append("my_file", imageFile);
 
     const response = await axios.post(
-      "http://localhost:9999/api/admin/products/upload-image",
+      `${serverAPI}/api/admin/products/upload-image`,
       data
     );
     if (response?.data.success) {
       setUploadedImgUrl(response.data.result.url); // Set the uploaded image URL in the state
+      setImageLoadingState(false);
+    } else {
       setImageLoadingState(false);
     }
   };
